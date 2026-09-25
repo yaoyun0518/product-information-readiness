@@ -33,9 +33,11 @@ The first two dimensions act as foundational conditions. The last three form the
 
 The tested workflow currently follows this sequence:
 
-**Input → Extract → Identify → Conflict Check → Five-Dimension Evaluation → Dynamic Decision Context → Selection-relevant Gap Detection → Conversational Enrichment → Re-evaluate → User Confirmation → Final Enriched Listing**
+**Input → Extract → Identify → Conflict Check → Five-Dimension Evaluation → Dynamic Decision Context → Selection-relevant Gap Detection → Conversational Enrichment → Readiness Warning → Re-evaluate → User Confirmation → Final Enriched Listing**
 
 Rather than using a fixed checklist, the workflow dynamically identifies which information actually affects AI filtering, matching, and recommendation for a specific product.
+
+If multiple selection-critical facts remain Unknown or Unverifiable after enrichment, the workflow now triggers a **Readiness Warning** instead of pushing the merchant to fill gaps by guessing.
 
 ## Key principles
 
@@ -46,6 +48,8 @@ Rather than using a fixed checklist, the workflow dynamically identifies which i
 - Evidence should support the exact claim, not a broader interpretation.
 - Verification status is discovered through dialogue rather than assumed in advance.
 - Human trust and AI confidence are not the same thing.
+- Missing information is not automatically a selection-relevant gap.
+- When critical uncertainty remains, warn rather than fabricate.
 
 ## Validation approach
 
@@ -58,13 +62,14 @@ The framework has been tested across multiple product categories, including:
 - food
 - running shoes
 - watches / accessories
+- portable hard drives
 
-Current validation focuses on whether the workflow improves AI understanding, matching, and recommendation readiness. External AI blind testing is planned as the next validation stage.
+Current validation focuses on whether the workflow improves AI understanding, matching, and recommendation readiness. External AI blind testing is now being used to compare baseline and enriched product information.
 
 ## Current versions
 
 - **Product Information Readiness Model V0.3**
-- **Prompt Workflow V0.4**
+- **Prompt Workflow V0.5**
 - **Output Flow V0.3**
 
 ## Project direction
