@@ -3,7 +3,7 @@
 A research-driven framework and workflow for improving product information readiness for AI selection and recommendation.
 
 > **Core question**  
-> How can product information increase the chance of being selected by AI?
+> How can product information increase the chance of being appropriately selected by AI?
 
 ## Why this project
 
@@ -13,7 +13,7 @@ The more useful question is whether AI can:
 - access the information,
 - understand it correctly,
 - match it to real consumer needs,
-- and make a confident recommendation.
+- and make a context-appropriate recommendation.
 
 This project explores that problem through real product listings, iterative testing, and a structured diagnostic workflow.
 
@@ -33,11 +33,13 @@ The first two dimensions act as foundational conditions. The last three form the
 
 The tested workflow currently follows this sequence:
 
-**Input → Extract → Identify → Conflict Check → Five-Dimension Evaluation → Dynamic Decision Context → Selection-relevant Gap Detection → Conversational Enrichment → Readiness Warning → Re-evaluate → User Confirmation → Final Enriched Listing**
+**Input → Extract → Identify → Conflict Check → Five-Dimension Evaluation → Dynamic Decision Context → Selection-relevant Gap Detection → Conversational Enrichment → Readiness Warning → Re-evaluate → Merchant Context Test → Context Gap Check → Continue? → User Confirmation → Final Enriched Listing**
 
-Rather than using a fixed checklist, the workflow dynamically identifies which information actually affects AI filtering, matching, and recommendation for a specific product.
+Rather than using a fixed checklist, the workflow dynamically identifies which information actually affects AI filtering, matching, and recommendation for a specific product and consumer context.
 
-If multiple selection-critical facts remain Unknown or Unverifiable after enrichment, the workflow now triggers a **Readiness Warning** instead of pushing the merchant to fill gaps by guessing.
+If multiple selection-critical facts remain Unknown or Unverifiable after enrichment, the workflow triggers a **Readiness Warning** instead of pushing the merchant to fill gaps by guessing.
+
+After first-round enrichment, the merchant can provide 2–3 real, high-frequency consumer contexts. The workflow tests the enriched listing against those contexts, checks whether any selection-relevant gaps remain, and asks whether the merchant wants to enter another enrichment round.
 
 ## Key principles
 
@@ -49,6 +51,8 @@ If multiple selection-critical facts remain Unknown or Unverifiable after enrich
 - Verification status is discovered through dialogue rather than assumed in advance.
 - Human trust and AI confidence are not the same thing.
 - Missing information is not automatically a selection-relevant gap.
+- The same missing information can be critical in one consumer context and secondary in another.
+- Better information should improve selection quality, not merely increase recommendation rate.
 - When critical uncertainty remains, warn rather than fabricate.
 
 ## Validation approach
@@ -63,14 +67,17 @@ The framework has been tested across multiple product categories, including:
 - running shoes
 - watches / accessories
 - portable hard drives
+- infant soothing devices
 
-Current validation focuses on whether the workflow improves AI understanding, matching, and recommendation readiness. External AI blind testing is now being used to compare baseline and enriched product information.
+Current validation focuses on whether the workflow improves AI understanding, matching, recommendation boundaries, and context-appropriate confidence. External AI blind testing is used to compare baseline and enriched product information.
+
+Recent context-shift testing also keeps product information fixed while changing the consumer scenario, to observe whether AI appropriately changes which gaps matter most.
 
 ## Current versions
 
 - **Product Information Readiness Model V0.3**
-- **Prompt Workflow V0.5**
-- **Output Flow V0.3**
+- **Prompt Workflow V0.6**
+- **Output Flow V0.4**
 
 ## Project direction
 
