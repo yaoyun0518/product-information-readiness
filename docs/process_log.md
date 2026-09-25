@@ -56,6 +56,78 @@ Operational/service details are secondary unless they materially affect initial 
 ### 11. Verification status is discovered through dialogue
 Whether reliable source material exists cannot always be known upfront. Verification status therefore emerges during the interaction rather than serving as an initial input.
 
+### 12. Missing information ≠ selection-relevant gap
+Blind testing showed that an AI can list many missing fields that do not materially affect the current consumer's decision.
+
+This led to a sharper distinction between generic completeness and information that actually affects filtering, matching and recommendation.
+
+### 13. Better information does not always increase recommendation confidence
+Tests with higher-risk products showed that better information can make AI more cautious rather than more favorable.
+
+A more mature interpretation emerged:
+
+> **Better product information should improve selection quality, not merely increase recommendation rate.**
+
+The result of better information may be:
+- stronger recommendation,
+- unchanged but better-calibrated confidence,
+- clearer conditional recommendation,
+- or clearer exclusion.
+
+### 14. Selection-relevant gaps are context-dependent
+A context-shift test on an infant soothing device kept the product information fixed while changing the consumer scenario.
+
+The same unknown — such as cry-detection reliability — became:
+- secondary for light daytime white-noise use,
+- critical for overnight automatic soothing,
+- secondary again when content playback was the main purchase reason.
+
+This validated:
+
+> **The importance of an information gap changes with consumer context.**
+> 同一条信息缺口的重要性，会随着消费者语境改变。
+
+### 15. Feature existence and feature reliability are different questions
+In the baseline infant-soother test, the AI could only ask whether cry detection actually triggered automatic soothing.
+
+After enrichment, that question was resolved, allowing the AI to move deeper into:
+- sensitivity,
+- recognition distance,
+- false triggering,
+- usage boundaries,
+- and safety-related uncertainty.
+
+This revealed a useful distinction:
+
+> **Feature existence uncertainty → Feature reliability uncertainty**
+
+### 16. Merchant Context Test added
+Because merchants often understand their real customer groups better than a generic test prompt, the workflow now asks them to provide 2–3 high-frequency consumer contexts after first-round enrichment.
+
+Each context should describe:
+- who the consumer is,
+- why they buy,
+- what matters most,
+- hard constraints,
+- secondary / nice-to-have factors.
+
+The merchant should provide real demand, not instructions for how they want AI to recommend the product.
+
+### 17. Context validation becomes iterative
+If the AI finds that the enriched listing is still insufficient or inaccurate in an important merchant-supplied consumer context, the workflow asks whether the merchant wants another enrichment round.
+
+If yes:
+
+**Enrich → Re-evaluate → Merchant Context Test → Context Gap Check**
+
+If no:
+- stop iteration,
+- preserve the first-round confirmed enrichment result,
+- retain unresolved Unknown / Unverified items,
+- keep any relevant Readiness Warning.
+
+This prevents endless questioning while allowing useful second-round refinement.
+
 ## Current Public Narrative
 
 **Research → Insight → Framework → Tool**
@@ -63,6 +135,10 @@ Whether reliable source material exists cannot always be known upfront. Verifica
 Potential portfolio framing:
 
 > I entered an unfamiliar and fast-changing field, built a clear research framework, identified a meaningful product-information problem, and translated it into a practical strategic tool.
+
+A stronger current interpretation of the project is:
+
+> The tool is not designed to make every product more recommendable. It is designed to help AI make better, more context-appropriate selection decisions from product information.
 
 ## Publication Plan
 
