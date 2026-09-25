@@ -161,6 +161,7 @@ Rules:
 5. A merchant’s subjective answer is not automatically Verified.
 6. Upgrade information only when a reliable source supports it.
 7. Do not broaden a claim beyond what the evidence explicitly supports.
+8. If several consecutive questions on **Core Decision Factors｜核心决策因素** return Unknown / Unverifiable, stop mechanical questioning and evaluate whether a Readiness Warning should be triggered.
 
 > **Evidence should support the exact claim, not a broader interpretation.**  
 > 证据只支持它明确覆盖的结论，不扩大解释。
@@ -178,6 +179,20 @@ Typical trigger conditions include:
 - The merchant repeatedly cannot provide reliable sources for important claims.
 - Continuing the optimization would require speculation rather than evidence.
 
+### Trigger Calibration｜触发边界
+
+Do **not** trigger a warning after a single missing answer.
+
+A warning becomes appropriate when uncertainty forms a cluster around the product's core suitability or reliability. In practice, this often means several related Core Decision Factors remain Unknown / Unverifiable and the merchant cannot provide a reliable source.
+
+Validated example — storage device:
+- Drive brand: Unknown
+- Drive model: Unknown
+- Drive new / used status: Unknown
+- Verifiable health / test report: unavailable
+
+At this point, further copy optimization does not solve the underlying information problem. The workflow should stop repetitive questioning and warn that source-level information is insufficient.
+
 ### Standard Warning｜标准提醒
 
 > **当前仍有多项影响 AI 选择与推荐的关键信息无法确认。**  
@@ -191,6 +206,13 @@ Use a stronger warning when uncertainty affects several core factors or the prod
 > **当前商品存在较高的信息不确定性。**  
 > 即使页面信息较完整，AI 仍可能因为关键事实无法验证而降低推荐信心。  
 > 建议先补充核心来源信息，再继续优化商品词条。
+
+After a High-Uncertainty Warning:
+- Stop asking repetitive questions that are unlikely to produce new evidence.
+- Keep unresolved items explicitly marked as Unknown / Unverifiable.
+- Allow the workflow to continue with known information only.
+- Keep **Confidence｜决策信心** appropriately low if the unresolved factors materially affect recommendation.
+- Recommend source-level next actions such as supplier documents, SMART / diagnostic results, test reports, manuals, or official specifications where relevant.
 
 Principles:
 - Do not trigger warnings merely because any field is missing.
