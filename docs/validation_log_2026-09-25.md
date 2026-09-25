@@ -274,6 +274,161 @@ This validated the V0.5 trigger boundary:
 
 ---
 
+# Test 4｜Infant Soothing Device + Consumer Context Shift
+
+## Goal
+
+Validate two questions:
+
+1. Does enriched information always increase recommendation confidence?
+2. Does the importance of an information gap change when the consumer context changes?
+
+The product was anonymized as:
+
+> **Product Z｜婴幼儿安抚仪**
+
+The enriched version clarified:
+- Cry detection must be manually enabled.
+- When enabled, it detects crying in real time and automatically plays white noise.
+- Timer ends playback after 30 / 60 / 90 minutes.
+- Page-stated endurance is about 58 hours, but test conditions are unknown.
+- Suggested placement distance is unknown.
+- 37–80 dB test distance / conditions / source are unknown.
+- Cry-detection sensitivity, recognition distance and false-trigger behavior are unknown.
+- CE and CAN ICES marks exist, but cannot be treated as proof of infant-material safety.
+
+## Initial A/B result
+
+Under a general soothing / night-use consumer need:
+
+- Baseline A: conditional / pending candidate, Confidence Low
+- Enriched B: conditional / pending candidate, Confidence Low
+
+The final confidence did not increase.
+
+However, B's reasoning became more focused:
+- A was cautious because many details were simply missing.
+- B was cautious because specific, selection-relevant uncertainties remained around sound-use boundaries, cry-detection reliability, endurance conditions and infant-use evidence.
+
+### Key Finding 5｜关键发现 5
+
+> **Better information does not necessarily increase recommendation rate or confidence.**
+> 更好的信息不一定提高推荐率或推荐信心。
+
+A better outcome can also be a more precise reason for caution.
+
+Therefore:
+
+> **Better product information should improve selection quality, not merely increase recommendation rate.**
+> 更好的商品信息应该提升 AI 的选择判断质量，而不是机械地提高推荐率。
+
+---
+
+## Context Shift Test｜消费者语境切换测试
+
+Product information was held constant. Only the consumer context changed.
+
+Three contexts were tested with both Baseline A and Enriched B.
+
+### Context 1｜Light daytime use
+
+Consumer mainly wanted occasional daytime white noise, home use plus some portability, and did not depend on automatic soothing.
+
+Results:
+- A1: conditional candidate, Confidence Low
+- B1: conditional candidate, Confidence Medium
+
+Important behavior:
+- In B1, cry-detection sensitivity / range / false-trigger uncertainty was explicitly treated as relatively unimportant because automatic soothing was not a core need.
+- The model instead focused more on white-noise availability, timer, Type-C charging, portability, operation and sound-use boundaries.
+
+### Context 2｜Overnight automatic soothing
+
+Consumer wanted a newborn to use the device at night for long periods and relied on automatic cry recognition and soothing.
+
+Results:
+- A2: not ready for recommendation / needs key information, Confidence Low
+- B2: not ready for recommendation / needs key information, Confidence Low
+
+Important behavior:
+- A2 could not confirm whether “supports cry detection” actually meant cry-triggered automatic soothing.
+- B2 resolved the feature-existence question and moved deeper into feature-reliability questions:
+  - sensitivity,
+  - recognition distance,
+  - false triggers,
+  - playback behavior after triggering,
+  - sound-use distance,
+  - volume-test conditions,
+  - endurance conditions,
+  - infant-use safety evidence.
+
+This revealed a useful progression:
+
+> **Feature existence uncertainty → Feature reliability uncertainty**
+
+### Context 3｜Content playback as primary use
+
+Consumer mainly cared about songs, stories, white noise, occasional parent-voice recording, endurance and portability. Automatic soothing was secondary.
+
+Results:
+- A3: pending candidate, Confidence Low
+- B3: conditional candidate, Confidence Low
+
+Important behavior:
+- Cry-detection unknowns were correctly downgraded to secondary.
+- The main remaining gaps shifted toward operation, content usability, recording details, real endurance conditions and portability.
+
+---
+
+## Key Finding 6｜关键发现 6
+
+> **The same missing information may be critical in one consumer context and secondary in another.**
+> 同一条缺失信息，在一个消费者语境中可能是核心缺口，在另一个语境中可能只是次要信息。
+
+Cry-detection reliability was the clearest example:
+- Secondary in light daytime use
+- Critical in overnight automatic soothing
+- Secondary again in content-playback use
+
+This supports **Dynamic Decision Context｜动态决策语境** as a formal workflow requirement.
+
+---
+
+## Key Finding 7｜关键发现 7
+
+The context-shift test also showed that enriched information can improve confidence selectively rather than universally.
+
+Only B1 moved from Low to Medium confidence.
+
+B2 stayed Low because the consumer context made unresolved safety and reliability gaps critical.
+
+B3 stayed Low because several consumer-priority details — operation, content usability, recording details and real endurance conditions — were still unresolved.
+
+Therefore:
+
+> **Context determines which Unknowns matter, and which Unknowns can safely remain secondary.**
+> 消费者语境决定哪些 Unknown 真正影响选择，以及哪些 Unknown 可以保持次要。
+
+---
+
+## Workflow Implication｜流程影响
+
+The validation results led to a new workflow step:
+
+### Merchant Context Test｜商户消费者语境测试
+
+After first-round enrichment, the merchant provides 2–3 real, high-frequency consumer contexts based on their customer knowledge.
+
+For each context, the workflow checks whether the enriched listing supports an appropriate AI selection decision.
+
+If important context-specific gaps remain, the merchant is asked whether to continue into another enrichment round.
+
+If the merchant chooses not to continue, the workflow preserves the first-round enrichment result and keeps unresolved Unknown / Unverified items explicit.
+
+This became part of **Prompt Workflow V0.6** and **Output Flow V0.4**.
+
+---
+
 ## Validation Status｜当前验证状态
 
 Current evidence is **directionally supportive, not conclusive**.
@@ -284,9 +439,13 @@ What is supported so far:
 - Missing information and selection-relevant gaps are not the same thing.
 - Structured attribution can improve reasoning clarity even when the recommendation itself does not change.
 - Readiness Warnings are useful when core uncertainty becomes clustered and source-level.
+- Better information does not always increase recommendation confidence; it can also produce better-calibrated caution.
+- The same information gap can change importance across consumer contexts.
+- Context-aware validation can reveal whether first-round enrichment is actually sufficient for real customer scenarios.
 
 What still needs more evidence:
 
-- Whether the matching/confidence improvement reproduces consistently across more product categories.
+- Whether context-dependent gap weighting reproduces consistently across more product categories.
 - Whether different external AI models respond similarly.
+- Whether merchant-supplied consumer contexts produce stable and useful second-round enrichment priorities.
 - Whether the current Warning trigger remains appropriate across categories with different risk profiles.
