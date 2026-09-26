@@ -76,8 +76,8 @@ However, several details still remained unresolved, so the enriched listing did 
 
 The most useful additions were not generic completeness fields. They were the facts that directly mapped to the consumer's needs.
 
-> **Missing information ≠ Selection-relevant gap.**
-> 缺失信息，不等于与选择相关的信息缺口。
+> **Not all missing information affects AI selection and recommendation.**
+> 不是所有缺失的信息，都会影响 AI 的选择与推荐。
 
 ### 2. Enrichment does not guarantee high recommendation confidence
 
