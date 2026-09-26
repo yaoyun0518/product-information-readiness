@@ -146,8 +146,8 @@ However, not all missing information is equally relevant to the current consumer
 
 Therefore:
 
-> **Missing information ≠ Selection-relevant gap.**
-> 缺失信息，不等于与选择相关的信息缺口。
+> **Not all missing information affects AI selection and recommendation.**
+> 不是所有缺失的信息，都会影响 AI 的选择与推荐。
 
 This reinforces the decision not to turn the workflow into a generic completeness checklist.
 
@@ -415,9 +415,9 @@ Therefore:
 
 The validation results led to a new workflow step:
 
-### Merchant Context Test｜商户消费者语境测试
+### Merchant-simulated Consumer Context Test｜商户模拟消费者语境测试
 
-After first-round enrichment, the merchant provides 2–3 real, high-frequency consumer contexts based on their customer knowledge.
+After first-round enrichment, the merchant provides 2–3 representative consumer contexts simulated from customer needs, purchase patterns, or target audience profiles they have already collected.
 
 For each context, the workflow checks whether the enriched listing supports an appropriate AI selection decision.
 
@@ -436,16 +436,16 @@ Current evidence is **directionally supportive, not conclusive**.
 What is supported so far:
 
 - Selection-relevant enrichment can improve AI matching and recommendation confidence.
-- Missing information and selection-relevant gaps are not the same thing.
+- Not all missing information affects AI selection and recommendation.
 - Structured attribution can improve reasoning clarity even when the recommendation itself does not change.
 - Readiness Warnings are useful when core uncertainty becomes clustered and source-level.
 - Better information does not always increase recommendation confidence; it can also produce better-calibrated caution.
 - The same information gap can change importance across consumer contexts.
-- Context-aware validation can reveal whether first-round enrichment is actually sufficient for real customer scenarios.
+- Context-aware validation can reveal whether first-round enrichment is sufficient for representative customer scenarios simulated from merchant knowledge.
 
 What still needs more evidence:
 
 - Whether context-dependent gap weighting reproduces consistently across more product categories.
 - Whether different external AI models respond similarly.
-- Whether merchant-supplied consumer contexts produce stable and useful second-round enrichment priorities.
+- Whether merchant-simulated consumer contexts produce stable and useful second-round enrichment priorities.
 - Whether the current Warning trigger remains appropriate across categories with different risk profiles.
