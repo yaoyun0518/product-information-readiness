@@ -17,7 +17,7 @@ Earlier versions are retained because they show how the framework changed after 
 
 - moving from generic completeness toward **Selection-relevant Gap Detection**
 - adding **Readiness Warning** when important uncertainty remains
-- adding **Merchant Context Test** and context-driven iteration
+- adding **Merchant-simulated Consumer Context Test｜商户模拟消费者语境测试** and context-driven iteration
 - shifting the goal from simply increasing recommendation rate to improving **context-appropriate selection quality**
 
 ## Version history
@@ -25,12 +25,12 @@ Earlier versions are retained because they show how the framework changed after 
 ### Prompt Workflow
 - V0.4 — core dynamic gap-detection workflow
 - V0.5 — added Readiness Warning and warning-trigger calibration
-- V0.6 — added Merchant Context Test, Context Gap Check, and optional next-round enrichment
+- V0.6 — added Merchant-simulated Consumer Context Test, Context Gap Check, and optional next-round enrichment
 
 ### Output Flow
 - V0.2 — first structured before/after comparison
 - V0.3 — added confirmation and post-publishing re-evaluation
-- V0.4 — added Merchant Context Test and context-driven iterative refinement
+- V0.4 — added Merchant-simulated Consumer Context Test and context-driven iterative refinement
 
 ## Reading order
 
