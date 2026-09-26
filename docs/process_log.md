@@ -56,7 +56,7 @@ Operational/service details are secondary unless they materially affect initial 
 ### 11. Verification status is discovered through dialogue
 Whether reliable source material exists cannot always be known upfront. Verification status therefore emerges during the interaction rather than serving as an initial input.
 
-### 12. Missing information ≠ selection-relevant gap
+### 12. Not all missing information affects AI selection and recommendation
 Blind testing showed that an AI can list many missing fields that do not materially affect the current consumer's decision.
 
 This led to a sharper distinction between generic completeness and information that actually affects filtering, matching and recommendation.
@@ -101,8 +101,10 @@ This revealed a useful distinction:
 
 > **Feature existence uncertainty → Feature reliability uncertainty**
 
-### 16. Merchant Context Test added
-Because merchants often understand their real customer groups better than a generic test prompt, the workflow now asks them to provide 2–3 high-frequency consumer contexts after first-round enrichment.
+### 16. Merchant-simulated Consumer Context Test added
+Because merchants often understand their customer groups better than a generic test prompt, the workflow now asks them to provide 2–3 representative consumer contexts after first-round enrichment.
+
+These contexts should be simulated from customer needs, purchase patterns, or target audience profiles the merchant has already collected.
 
 Each context should describe:
 - who the consumer is,
@@ -111,14 +113,14 @@ Each context should describe:
 - hard constraints,
 - secondary / nice-to-have factors.
 
-The merchant should provide real demand, not instructions for how they want AI to recommend the product.
+The merchant should describe demand patterns they already know, not instructions for how they want AI to recommend the product.
 
 ### 17. Context validation becomes iterative
-If the AI finds that the enriched listing is still insufficient or inaccurate in an important merchant-supplied consumer context, the workflow asks whether the merchant wants another enrichment round.
+If the AI finds that the enriched listing is still insufficient or inaccurate in an important merchant-simulated consumer context, the workflow asks whether the merchant wants another enrichment round.
 
 If yes:
 
-**Enrich → Re-evaluate → Merchant Context Test → Context Gap Check**
+**Enrich → Re-evaluate → Merchant-simulated Consumer Context Test → Context Gap Check**
 
 If no:
 - stop iteration,
