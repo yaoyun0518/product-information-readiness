@@ -41,6 +41,49 @@ If multiple selection-critical facts remain Unknown or Unverifiable after enrich
 
 After first-round enrichment, the merchant can provide 2–3 real, high-frequency consumer contexts. The workflow tests the enriched listing against those contexts, checks whether any selection-relevant gaps remain, and asks whether the merchant wants to enter another enrichment round.
 
+## Example cases
+
+Two public examples illustrate different parts of the framework.
+
+### Case 1｜Watch — enrichment and conditional recommendation
+
+This case compares a baseline watch listing with an enriched version under the same consumer need.
+
+The enriched listing added selection-relevant information such as:
+- wrist-fit range,
+- usage scenarios,
+- water-use boundaries,
+- and variant differences.
+
+The external AI moved from insufficient information to a conditional recommendation, while confidence remained calibrated rather than becoming automatically high.
+
+**What this case demonstrates:**
+
+> Better information can improve matching and recommendation quality without guaranteeing a strong recommendation.
+
+See: [`examples/watch_case.md`](examples/watch_case.md)
+
+### Case 2｜Infant soothing device — consumer context shift
+
+This case holds product information constant while changing the consumer scenario.
+
+The same unknown — cry-detection reliability — became:
+- secondary for light daytime white-noise use,
+- critical for overnight automatic soothing,
+- secondary again when content playback was the main purchase reason.
+
+**What this case demonstrates:**
+
+> The importance of an information gap changes with consumer context.
+
+It also motivated the addition of **Merchant Context Test｜商户消费者语境测试** to the workflow.
+
+See: [`examples/infant_soothing_context_test.md`](examples/infant_soothing_context_test.md)
+
+Together, the two cases support a broader conclusion:
+
+> **Better product information should improve the quality of AI selection, not merely increase recommendation rate.**
+
 ## Key principles
 
 - **Low input burden, high diagnostic value.**
