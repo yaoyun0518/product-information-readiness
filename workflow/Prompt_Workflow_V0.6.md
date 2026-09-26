@@ -5,7 +5,7 @@
 > **How can product information increase the chance of being appropriately selected by AI?**  
 > 商品信息如何提高被 AI 正确选择与推荐的概率？
 
-The tool is not designed to maximize the amount of product information. It identifies information gaps that affect AI filtering, matching and recommendation, helps merchants enrich those gaps through guided dialogue, and then validates the enriched information against real consumer contexts supplied by the merchant.
+The tool is not designed to maximize the amount of product information. It identifies information gaps that affect AI filtering, matching and recommendation, helps merchants enrich those gaps through guided dialogue, and then validates the enriched information against representative consumer contexts simulated by the merchant based on collected customer needs, purchase patterns, or target audience profiles.
 
 ## 1. Input｜输入
 
@@ -206,9 +206,13 @@ After enrichment and any readiness warning, re-evaluate the same five dimensions
 
 Do not use numeric scores. Use **Readiness Level｜准备度** with qualitative status.
 
-## 12. Merchant Context Test｜商户消费者语境测试
+## 12. Merchant-simulated Consumer Context Test｜商户模拟消费者语境测试
 
-After first-round enrichment, ask the merchant to provide **2–3 real, high-frequency consumer contexts** based on their actual customer knowledge.
+After first-round enrichment, ask the merchant to provide **2–3 representative consumer contexts** simulated from customer knowledge already available to them, such as:
+- collected customer needs
+- purchase patterns
+- recurring questions or feedback
+- target audience profiles
 
 For each context, collect only what is useful for selection judgment:
 - Who the consumer is
@@ -217,7 +221,7 @@ For each context, collect only what is useful for selection judgment:
 - Hard constraints
 - Secondary / nice-to-have factors
 
-Do not ask merchants to describe how they want the AI to recommend the product. The goal is to capture real demand, not to induce a favorable answer.
+Do not ask merchants to describe how they want the AI to recommend the product. The goal is to simulate representative demand from existing customer knowledge, not to induce a favorable answer.
 
 Use the enriched listing to test whether AI can make a context-appropriate selection judgment.
 
@@ -234,7 +238,7 @@ Principle:
 
 ## 13. Context Gap Check｜语境缺口检查
 
-After the Merchant Context Test, check whether one or more consumer contexts still reveal:
+After the Merchant-simulated Consumer Context Test, check whether one or more simulated consumer contexts still reveal:
 - Selection-critical Unknowns
 - Inaccurate or weakly supported claims
 - Missing usage boundaries
@@ -251,7 +255,7 @@ Ask the merchant whether to continue.
 
 Suggested prompt:
 
-> 在你提供的消费者场景中，仍有几项信息会影响 AI 的选择判断。是否继续进行下一轮信息补充？
+> 在你提供的模拟消费者语境中，仍有几项信息会影响 AI 的选择判断。是否继续进行下一轮信息补充？
 
 ### If Yes｜继续
 
@@ -259,7 +263,7 @@ Return to **Conversational Enrichment｜对话式信息补全** and only pursue 
 
 Then repeat:
 
-**Enrich → Re-evaluate → Merchant Context Test → Context Gap Check**
+**Enrich → Re-evaluate → Merchant-simulated Consumer Context Test → Context Gap Check**
 
 Do not loop indefinitely. Continue only while the merchant chooses to proceed and the next round is likely to improve decision quality.
 
@@ -314,7 +318,7 @@ Input
 → Conversational Enrichment  
 → Readiness Warning  
 → Re-evaluate  
-→ **Merchant Context Test**  
+→ **Merchant-simulated Consumer Context Test**  
 → **Context Gap Check**  
 → **Continue?**  
 → if Yes: return to Conversational Enrichment  
