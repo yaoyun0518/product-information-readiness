@@ -37,6 +37,81 @@ This framework focuses on what merchants can prepare in advance: product informa
 
 ---
 
+## Use Cases｜使用场景
+
+The same workflow can support merchants at two different stages of product publishing.
+
+同一套工作流可以支持商户在商品上架前与上架后两个不同阶段使用。
+
+### 1. Pre-listing Preparation｜上架前信息准备
+
+For new products or merchants who do not yet have a complete listing.
+
+适用于还没有完整详情页的新商品或新商户。
+
+The merchant can provide whatever already exists, such as:
+- product specifications,
+- manuals,
+- parameter sheets,
+- images,
+- supplier materials,
+- test reports,
+- and other existing product documentation.
+
+商户可以直接提供已经拥有的资料，例如：
+- 产品规格，
+- 说明书，
+- 参数表，
+- 图片，
+- 供应商资料，
+- 测试资料，
+- 以及其他现有商品文件。
+
+The workflow extracts what is already known, identifies which additional information actually affects AI understanding, matching and recommendation, and guides the merchant to fill only those useful gaps.
+
+工作流会先提取已有信息，再判断哪些补充内容真正影响 AI 的理解、匹配与推荐，并通过对话引导商户补充这些有价值的信息缺口。
+
+The result is a more complete, verifiable and AI-readable product-information foundation that can be used to build a higher-quality product detail page.
+
+最终得到一套更完整、可验证、适合 AI 理解与匹配的商品信息基础，可用于后续制作更高质量的商品详情页。
+
+### 2. Post-listing Improvement｜上架后内容升级
+
+For merchants who already have an existing product listing or detail page.
+
+适用于已经有商品详情页或现有 listing 的商户。
+
+The workflow checks the current information for:
+- conflicts,
+- selection-relevant gaps,
+- unclear claim boundaries,
+- evidence quality,
+- AI legibility,
+- matching readiness,
+- and remaining critical Unknown / Unverified items under different consumer contexts.
+
+工作流会检查现有商品信息中的：
+- 信息冲突，
+- 与选择相关的关键缺口，
+- 表述边界是否清晰，
+- 证据质量，
+- AI 是否容易理解，
+- 是否足以支持需求匹配，
+- 以及在不同消费者语境下仍然存在的关键 Unknown / Unverified。
+
+The listing can then be enriched, corrected and re-evaluated after publishing.
+
+之后可以继续补充、修正，并在商品上架后再次复评。
+
+> **Bring what you already have.**  
+> **把你已经有的资料拿来就可以。**
+
+The workflow is designed to reduce input burden rather than force merchants to complete a large fixed checklist.
+
+这套流程的目标是降低商户的信息准备负担，而不是要求先填写一张庞大的固定清单。
+
+---
+
 ## Framework｜五维模型
 
 Product Information Readiness currently evaluates five dimensions:
@@ -82,9 +157,9 @@ Is there enough relevant and reliable information for AI to include or recommend
 ## How it works｜如何运作
 
 ### 1. Input｜输入
-Submit an existing product URL, listing page, screenshots or product materials.
+Submit an existing product URL, listing page, screenshots, specifications, manuals or other product materials.
 
-提交现有商品链接、详情页、截图或商品素材。
+提交现有商品链接、详情页、截图、产品规格、说明书或其他商品素材。
 
 ↓
 
@@ -286,8 +361,8 @@ product-information-readiness/
 
 This is an active research / portfolio project.
 
-The next stage is to package the tested workflow into a reusable Skill for product-information diagnosis, enrichment and context-aware validation.
+The next stage is to package the tested workflow into a reusable Skill for **pre-listing preparation, post-listing diagnosis, product-information enrichment and context-aware validation**.
 
 这是一个仍在持续推进中的研究型作品集项目。
 
-下一阶段是把目前已经测试过的工作流进一步包装成可复用的 Skill，用于商品信息诊断、补充与基于消费者语境的验证。
+下一阶段是把目前已经测试过的工作流进一步包装成可复用的 Skill，用于**上架前信息准备、上架后诊断、商品信息补充，以及基于消费者语境的验证**。
