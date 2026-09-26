@@ -128,9 +128,9 @@ The content-playback case also stayed Low because several consumer-priority deta
 
 This case led to the addition of:
 
-> **Merchant Context Test｜商户消费者语境测试**
+> **Merchant-simulated Consumer Context Test｜商户模拟消费者语境测试**
 
-After first-round enrichment, merchants provide 2–3 real, high-frequency consumer contexts based on their actual customer knowledge.
+After first-round enrichment, merchants provide 2–3 representative consumer contexts simulated from customer needs, purchase patterns, or target audience profiles they have already collected.
 
 The workflow then checks whether the enriched listing supports appropriate AI selection decisions in those contexts.
 
