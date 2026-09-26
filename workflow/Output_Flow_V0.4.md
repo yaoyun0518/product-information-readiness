@@ -18,9 +18,9 @@ Rules:
 - In the **变化** column, separate each change into its own line or paragraph.
 - Do not compress several changes into one long sentence.
 
-## Step 2｜Merchant Context Test｜商户消费者语境测试
+## Step 2｜Merchant-simulated Consumer Context Test｜商户模拟消费者语境测试
 
-Before the final listing, ask the merchant for 2–3 real high-frequency consumer contexts.
+Before the final listing, ask the merchant for 2–3 representative consumer contexts simulated from customer knowledge already available to them, such as collected customer needs, purchase patterns, recurring questions or feedback, and target audience profiles.
 
 For each context, collect only:
 - Who the consumer is
@@ -29,9 +29,11 @@ For each context, collect only:
 - Hard constraints
 - Secondary / nice-to-have factors
 
+Do not ask the merchant to describe how they want the AI to recommend the product. The goal is to simulate representative demand rather than induce a favorable result.
+
 Use the enriched product information to test whether AI can make a context-appropriate selection judgment.
 
-The goal is not to maximize recommendation rate. The goal is to test whether the current information supports the right recommendation boundary for different consumers.
+The goal is not to maximize recommendation rate. The goal is to test whether the current information supports the right recommendation boundary for different simulated consumer contexts.
 
 ## Step 3｜Context Gap Check｜语境缺口检查
 
@@ -40,14 +42,14 @@ After the context test, check whether important gaps remain.
 Examples:
 - A feature exists but reliability is still unknown
 - A usage boundary is missing
-- Safety, fit, compatibility, or evidence is insufficient in an important consumer context
+- Safety, fit, compatibility, or evidence is insufficient in an important simulated consumer context
 - The same Unknown becomes critical in one context but secondary in another
 
 If no important gaps remain, proceed to confirmation.
 
 If important gaps remain, explain them concisely and ask:
 
-> 在你提供的消费者场景中，仍有几项信息会影响 AI 的选择判断。是否继续进行下一轮信息补充？
+> 在你提供的模拟消费者语境中，仍有几项信息会影响 AI 的选择判断。是否继续进行下一轮信息补充？
 
 ### If merchant chooses Yes
 
@@ -55,7 +57,7 @@ Return to conversational enrichment and only ask about the newly surfaced select
 
 Then repeat:
 
-**Enrich → Re-evaluate → Merchant Context Test → Context Gap Check**
+**Enrich → Re-evaluate → Merchant-simulated Consumer Context Test → Context Gap Check**
 
 ### If merchant chooses No
 
